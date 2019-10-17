@@ -39,8 +39,9 @@ class Student {
         Collections.sort(SortScoreAl);
         for(int i=0; i<5; i++){
             AS.get(i).Score = SortScoreAl.get(i);
-            System.out.print(AS.get(i).Score + "");
+            System.out.print(AS.get(i).Score + " ");
         }
+        System.out.println(" ");
     }
    
     public void sortNames(ArrayList<Student> AS) {
@@ -72,17 +73,17 @@ public class ArrayListsQ2LabEx1 {
        
         Student method = new Student();
 
-        //method.displayArray(StudentArrayList);
+        method.displayArray(StudentArrayList);
 
-        //method.searchHighestScore(StudentArrayList);
+        method.searchHighestScore(StudentArrayList);
 
         method.sortScores(StudentArrayList);
        
-        //method.displayArray(StudentArrayList);
+        method.displayArray(StudentArrayList);
 
-        //method.sortNames(StudentArrayList);
+        method.sortNames(StudentArrayList);
        
-        //method.displayArray(StudentArrayList);        
+        method.displayArray(StudentArrayList);        
        
     }
     
