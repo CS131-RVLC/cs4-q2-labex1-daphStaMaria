@@ -4,8 +4,8 @@ Gluon 29
 2QLabEx1
  */
 package arraylistsq2labex1;
-
 import java.util.ArrayList;
+import java.util.*;
 
 class Student {
     String Name;
@@ -13,14 +13,14 @@ class Student {
    
    
     public void displayArray(ArrayList<Student> AS) {
-//<your code to display the array elements>
         for(int i=0; i<AS.size(); i++){
             System.out.print(AS.get(i).Name +" ");
         }
+        System.out.println(" ");
+
     }
    
-     public void searchHighestScore(ArrayList<Student> AS) {
-//<your code to search for the highest score in the array>
+    public void searchHighestScore(ArrayList<Student> AS) {
         int highScore;
         highScore = AS.get(0).Score;
         for(int i=0; i<AS.size();i++){
@@ -28,16 +28,31 @@ class Student {
                 highScore = AS.get(i).Score;
             }
         }
-        System.out.println("hs: " + highScore);
+        System.out.println("highest score: " + highScore);
        
     }    
     public void sortScores(ArrayList<Student> AS) {
-//         <your code to sort the array>
-
+        ArrayList<Integer> SortScoreAl = new ArrayList<>();
+        for(int i=0; i<5; i++){
+            SortScoreAl.add(AS.get(i).Score);
+        }
+        Collections.sort(SortScoreAl);
+        for(int i=0; i<5; i++){
+            AS.get(i).Score = SortScoreAl.get(i);
+            System.out.print(AS.get(i).Score + "");
+        }
     }
    
     public void sortNames(ArrayList<Student> AS) {
-//<your code to sort the array according the names>      
+        ArrayList<String> SortNameAl = new ArrayList<>();
+        for(int i=0; i<5; i++){
+            SortNameAl.add(AS.get(i).Name);
+        }
+        Collections.sort(SortNameAl);
+        for(int i=0; i<5; i++){
+            AS.get(i).Name = SortNameAl.get(i);
+        }
+        displayArray(AS);
    }
 }
 
@@ -57,17 +72,17 @@ public class ArrayListsQ2LabEx1 {
        
         Student method = new Student();
 
-        method.displayArray(StudentArrayList);
+        //method.displayArray(StudentArrayList);
 
-        method.searchHighestScore(StudentArrayList);
+        //method.searchHighestScore(StudentArrayList);
 
         method.sortScores(StudentArrayList);
        
-        method.displayArray(StudentArrayList);
+        //method.displayArray(StudentArrayList);
 
-        method.sortNames(StudentArrayList);
+        //method.sortNames(StudentArrayList);
        
-        method.displayArray(StudentArrayList);        
+        //method.displayArray(StudentArrayList);        
        
     }
     
