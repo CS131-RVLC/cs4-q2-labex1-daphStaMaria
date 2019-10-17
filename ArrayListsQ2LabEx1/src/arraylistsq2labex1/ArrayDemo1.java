@@ -8,7 +8,7 @@ class Student {
     
     public void displayArray(ArrayList<Student> AS) {
 //<your code to display the array elements>
-
+    System.out.println("abc");
     }
     
      public void searchHighestScore(ArrayList<Student> AS) {
