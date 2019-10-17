@@ -15,19 +15,53 @@ class Student2 {
 public class ArrayDemo2 {
     static void display(ArrayList<Student2> AS){
 //        <your code to display the array elements>
+        for(int i=0; i<AS.size(); i++){
+            System.out.print(AS.get(i).Name +" ");
+        }
+        System.out.println(" ");
+        for(int i=0; i<AS.size(); i++){
+            System.out.print(AS.get(i).Score +" ");
+        }
+        System.out.println(" ");
     }
 
     static ArrayList<Student2> sortScores(ArrayList<Student2> AS){
-       
-//		<your code to sort the array>
-             return null;
+        ArrayList<Integer> SortScoreAl = new ArrayList<>();
+        for(int i=0; i<5; i++){
+            SortScoreAl.add(AS.get(i).Score);
+        }
+        Collections.sort(SortScoreAl);
+        for(int i=0; i<5; i++){
+            AS.get(i).Score = SortScoreAl.get(i);
+            System.out.print(AS.get(i).Score + " ");
+        }
+        System.out.println(" ");
+        
+        return AS;
     }
     static void searchHighestScore(ArrayList<Student2> AS){
 //<your code to search for the highest score in the array>
+        int highScore;
+        highScore = AS.get(0).Score;
+        for(int i=0; i<AS.size();i++){
+            if(AS.get(i).Score>highScore){
+                highScore = AS.get(i).Score;
+            }
+        }
+        System.out.println("highest score: " + highScore);
     }
 
     static void sortNames (ArrayList<Student2> AS){
-//		<your code to sort the array according the names>      
+//		<your code to sort the array according the names>   
+        ArrayList<String> SortNameAl = new ArrayList<>();
+        for(int i=0; i<5; i++){
+            SortNameAl.add(AS.get(i).Name);
+        }
+        Collections.sort(SortNameAl);
+        for(int i=0; i<5; i++){
+            AS.get(i).Name = SortNameAl.get(i);
+        }
+        display(AS);
     }
 
     public static void main(String[] args) {
@@ -35,7 +69,7 @@ public class ArrayDemo2 {
 
         for(int x=0; x<5; x++){Student2ArrayList.add(new Student2());}
 
-  	 String[] NameI = {"Bok", "Mik", "Jak", "Luds", "Kim"};
+  	String[] NameI = {"Bok", "Mik", "Jak", "Luds", "Kim"};
         int[] ScoreI = {90, 96, 91, 97, 99};
 
         Student2ArrayList.get(0).Name = "Bok"; Student2ArrayList.get(0).Score = 90;
